@@ -8,16 +8,15 @@
           <h1><a href="">Felieuncje</a></h1>
         </div>
 
-        <div>
-            <p>published: 19.06.2016, 14:43</p>
-            <h2><a href="">My first post</a></h2>
-            <p>skjhkhfushgueiugrelgwueighwieulhgrwuheiwuhglrwieuhgieurlhgiuelhgw</p>
-        </div>
+        {% for post in posts %}
 
         <div>
-            <p>published: 19.06.2016, 15:43</p>
-            <h2><a href="">My second post</a></h2>
-            <p>skjhkhfushgueiugrelgwueighwieulhgrwuheiwuhglrwieuhgieurlhgiuelhgw</p>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }} </p>
+
         </div>
+{% endfor %}
+
       </body>
 </html>
